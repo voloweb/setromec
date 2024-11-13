@@ -27,8 +27,8 @@ const Header = () => {
               {navigation.map((item: NavigationType) => (
                 <Link key={item.name} to={item.href} aria-current={currentMenu === item.name ? 'page' : undefined}
                   className={`
-                    font-medium font-dm-sans px-1 pt-1 border-setromec-blue-2 hover:text-setromec-blue-2 hover:border-b-2
-                    ${currentMenu === item.name && 'text-setromec-blue-2 border-b-2'}
+                    font-medium font-dm-sans px-1 pt-1 border-b-2 hover:text-setromec-blue-2 hover:border-b-2
+                    ${currentMenu === item.name ? 'text-setromec-blue-2 border-setromec-blue-2' : 'border-transparent'}
                   `}
                 >
                   {item.name}
@@ -60,7 +60,7 @@ const Header = () => {
             to={item.href}
             aria-current={currentMenu === item.name ? 'page' : undefined}
             className={`
-              block font-medium font-dm-sans px-1 mb-4 hover:text-setromec-blue-2 hover:border-b-2
+              block font-medium font-dm-sans px-1 mb-5 hover:text-setromec-blue-2
               ${currentMenu === item.name && 'text-setromec-blue-2'}
             `}
           >
