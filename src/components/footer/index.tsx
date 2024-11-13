@@ -6,14 +6,14 @@ const scrollToTop = () => {
   var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
     if (currentScroll > 0) {
       window.requestAnimationFrame(scrollToTop);
-      window.scrollTo (0, currentScroll - (currentScroll / 10));
+      window.scrollTo (0, currentScroll - (currentScroll / 5));
     }
 }
 
 const Footer = () => {
   return (
     <footer>
-      <div className="bg-footer-1">
+      <div className="relative bg-footer-1">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mx-auto max-w-7xl">
           <div className="lg:col-span-2 text-white px-5 py-5 md:py-10">
             <img alt="Logo Setromec" src="assets/logo-white.png" className="h-8 md:h-10 w-auto mb-8" />
@@ -44,7 +44,7 @@ const Footer = () => {
             <a href="mailto:setromec@stromec.com.br" className="hover:opacity-80">setromec@stromec.com.br</a>
           </div>
 
-          <div className="flex justify-end px-5 py-5 md:py-10">
+          <div className="flex justify-end px-5 py-5 md:py-10 absolute bottom-0 right-0 lg:relative">
             <button onClick={scrollToTop} className="flex justify-center items-center rounded-full bg-setromec-blue-1 shadow-md size-12">
               <ArrowUpIcon aria-hidden="true" className="size-5 text-white" />
             </button>
