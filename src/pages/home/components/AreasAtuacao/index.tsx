@@ -27,7 +27,7 @@ const AreasAtuacao = () => {
         </div>
 
         <div className="flex flex-col justify-center p-5">
-          <h2 className="font-bold text-4xl pt-5">Quais nossas áreas de atuação?</h2>
+          <h2 className="font-bold text-3xl lg:text-4xl pt-5">Quais nossas áreas de atuação?</h2>
           <p className="py-5">
             Trabalhamos com processos confiáveis, que garantem consistência e
             excelência nos resultados, independentemente do tamanho ou

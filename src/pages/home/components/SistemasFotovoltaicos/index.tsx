@@ -9,7 +9,7 @@ const SistemasFotovoltaicos = () => {
             <img src="/assets/sistemas-fotovoltaicos.png" alt="Sistemas Fotovoltaicos" />
           </div>
           <div className="flex flex-col justify-center text-white px-5">
-            <h2 className="font-bold text-4xl pt-5">Sistemas Fotovoltaicos</h2>
+            <h2 className="font-bold text-3xl lg:text-4xl pt-5">Sistemas Fotovoltaicos</h2>
             <div className="py-5">
               <p>
                 Nossa divisão de energia solar fotovoltaica é preparada para

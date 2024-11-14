@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/**/*.{png,svg}", "./index.html"],
   theme: {
     extend: {},
   },
@@ -8,6 +8,15 @@ module.exports = {
       fontFamily: {
         'dm-sans': '"DM Sans", sans-serif',
         'inter': '"Inter", sans-serif'
+      },
+      backgroundImage: {
+        'home-banner': "url('/public/assets/home-bg.png')",
+        'home-banner-overlay': "url('/public/assets/home-shadow.svg')",
+        //servicos-swiper
+        'sw-projeto-laudos': "url('/public/assets/servicos-swiper/projeto_e_laudos.png')",
+        'sw-instalacaoes-obras': "url('/public/assets/servicos-swiper/instalacaoes_e_obras.png')",
+        'sw-manutencao-eletrica': "url('/public/assets/servicos-swiper/manutencao_eletrica.png')",
+        'sw-sistemas-fotovoltaicos': "url('/public/assets/servicos-swiper/sistemas_fotovoltaicos.png')",
       },
       colors: {
         setromec: {
