@@ -12,6 +12,10 @@ module.exports = {
       backgroundImage: {
         'home-banner': "url('/public/assets/home-bg.png')",
         'home-banner-overlay': "url('/public/assets/home-shadow.svg')",
+        // home-areas-atuacao
+        'home-areas-atuacao-1': "url('/public/assets/home-areas-atuacao/1.png')",
+        'home-areas-atuacao-2': "url('/public/assets/home-areas-atuacao/2.png')",
+        'home-areas-atuacao-3': "url('/public/assets/home-areas-atuacao/3.png')",
         //servicos-swiper
         'sw-projeto-laudos': "url('/public/assets/servicos-swiper/projeto_e_laudos.png')",
         'sw-instalacaoes-obras': "url('/public/assets/servicos-swiper/instalacaoes_e_obras.png')",

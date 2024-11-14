@@ -18,11 +18,11 @@ const AreasAtuacao = () => {
   return (
     <div className="py-5 lg:py-20 mx-auto max-w-7xl">
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="p-5">
-          <div className="grid justify-center grid-cols-3 h-full my-auto gap-5">
-            <img className="col-span-2 row-span-2 rounded m-auto h-full max-h-full" src="assets/home-areas-atuacao/1.png" alt="" />
-            <img className="rounded m-auto h-full max-h-46" src="assets/home-areas-atuacao/2.png" alt="" />
-            <img className="rounded m-auto h-full max-h-46" src="assets/home-areas-atuacao/3.png" alt="" />
+        <div className="p-5 my-auto">
+          <div className="grid grid-cols-3 gap-5 h-80 lg:h-[450px] w-full">
+            <div className="col-span-2 row-span-2 bg-home-areas-atuacao-1 bg-no-repeat bg-cover rounded"></div>
+            <div className="bg-home-areas-atuacao-2 bg-no-repeat bg-cover rounded"></div>
+            <div className="bg-home-areas-atuacao-3 bg-no-repeat bg-cover rounded"></div>
           </div>
         </div>
 
