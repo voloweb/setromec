@@ -23,14 +23,14 @@ const Header = () => {
   }
 
   return (
-    <nav className="bg-white shadow-md h-20">
+    <nav className="bg-white shadow-md h-20 z-50">
       <div className="flex items-center justify-between h-full px-5 md:p-0">
-        <div className="flex flex-1 items-center justify-between h-full">
+        <div className="flex flex-1 items-center justify-center lg:justify-between">
           <div className="flex flex-1 items-center p-0 gap-0 md:p-5 md:gap-5 mx-auto max-w-7xl">
             <Link to="/" className="flex items-center">
               <img alt="Logo Setromec" src="assets/logo.png" className="h-8 md:h-10 w-auto" />
             </Link>
-            <div className="hidden md:flex flex-1 justify-center gap-8">
+            <div className="hidden md:flex flex-1 md:justify-end lg:justify-start xl:justify-center gap-8">
               {navigation.map((item: NavigationType) => (
                 <Link key={item.name} to={item.href} aria-current={currentMenu === item.name ? 'page' : undefined}
                   className={`
@@ -44,7 +44,7 @@ const Header = () => {
             </div>
           </div>
 
-          <Link to="/contato" className="hidden lg:flex items-center justify-center gap-2 px-16 h-full bg-setromec-blue-1">
+          <Link to="/contato" className="hidden absolute lg:flex right-0 items-center justify-center gap-2 w-80 h-20 bg-setromec-blue-1">
             <span className="text-white">Falar com especialista</span>
             <ArrowRightIcon aria-hidden="true" className="text-white size-4" />
           </Link>

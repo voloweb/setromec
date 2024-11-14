@@ -1,6 +1,7 @@
 import { ArrowUpIcon } from '@heroicons/react/24/outline'
 import { navigation, NavigationType } from '../header/navigation';
 import { Link } from 'react-router-dom';
+import ButtonFalarEspecialista from '../ButtonFalarEspecialista';
 
 const scrollToTop = () => {
   var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -13,9 +14,9 @@ const scrollToTop = () => {
 const Footer = () => {
   return (
     <footer>
-      <div className="relative bg-footer-1">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mx-auto max-w-7xl">
-          <div className="lg:col-span-2 text-white px-5 py-5 md:py-10">
+      <div className="relative bg-setromec-gray-1 py-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 mx-auto max-w-7xl">
+          <div className="lg:col-span-4 text-white px-5 py-5 md:py-10">
             <img alt="Logo Setromec" src="assets/logo-white.png" className="h-8 md:h-10 w-auto mb-8" />
             <p className="mb-8">
               Somos uma empresa privada de capital nacional, fundada em junho de
@@ -28,7 +29,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 text-white px-5 py-5 md:py-10">
+          <div className="lg:col-span-3 flex flex-col gap-5 text-white p-5 md:py-10">
             {navigation.map((item: NavigationType) => (
               <Link
                 key={item.name}
@@ -40,19 +41,20 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="text-white px-5 py-5 md:py-10">
+          <div className="flex flex-col gap-5 lg:col-span-4 text-white px-5 py-5 md:py-10">
+            <ButtonFalarEspecialista />
             <a href="mailto:setromec@stromec.com.br" className="hover:opacity-80">setromec@stromec.com.br</a>
           </div>
 
           <div className="flex justify-end px-5 py-5 md:py-10 absolute bottom-0 right-0 lg:relative">
-            <button onClick={scrollToTop} className="flex justify-center items-center rounded-full bg-setromec-blue-1 shadow-md size-12">
+            <button onClick={scrollToTop} className="flex justify-center items-center rounded-full bg-setromec-blue-1 shadow-md size-9 md:size-12">
               <ArrowUpIcon aria-hidden="true" className="size-5 text-white" />
             </button>
           </div>
         </div>
       </div>
 
-      <p className="bg-footer-2 text-sm text-white text-center py-1">
+      <p className="bg-setromec-gray-2 text-sm text-white text-center py-1">
         Desenvolvido ❤ pela{' '}
         <a
           href="https://voloweb.com.br/"
