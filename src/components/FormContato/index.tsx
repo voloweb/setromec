@@ -25,9 +25,11 @@ const FormContato = () => {
     setLoading(true);
     setDisabled(true);
     try {
+      // eslint-disable-next-line
       console.log('E-mail de contato enviado com sucesso!', data);
       reset();
     } catch (error) {
+      // eslint-disable-next-line
       console.log('Ops, algo de errado aconteceu!', error);
     } finally {
       setTimeout(() => {

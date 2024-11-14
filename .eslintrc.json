@@ -23,6 +23,9 @@
     },
     "plugins": ["react", "@typescript-eslint", "react-hooks", "import", "react"],
     "rules": {
+      "comma-dangle": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/require-default-props": "off",
       "react/function-component-definition": [
           2,
           {
@@ -30,6 +33,10 @@
           "unnamedComponents": "arrow-function"
           }
         ],
+        "react/button-has-type": "off",
+        "react/self-closing-comp": "off",
+        "react/jsx-closing-tag-location": "off",
+        "jsx-a11y/label-has-associated-control": "off",
         "arrow-body-style": ["off", "as-needed"],
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "error",

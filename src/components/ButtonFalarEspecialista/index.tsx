@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Button from '../Button';
 
-type ButtonFalarEspecialista = {
+type ButtonFalarEspecialistaType = {
   secondary?: boolean;
   className?: string;
 };
@@ -11,7 +11,7 @@ type ButtonFalarEspecialista = {
 const ButtonFalarEspecialista = ({
   secondary = false,
   className = '',
-}: ButtonFalarEspecialista) => {
+}: ButtonFalarEspecialistaType) => {
   const navigate = useNavigate();
 
   return (

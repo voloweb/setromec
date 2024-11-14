@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import {
   HomeIcon,
   BuildingStorefrontIcon,
   BuildingOfficeIcon,
 } from '@heroicons/react/24/outline';
 import ButtonFalarEspecialista from '../../../../components/ButtonFalarEspecialista';
-import { ReactElement } from 'react';
 
 type Area = {
   id: number;

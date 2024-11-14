@@ -1,11 +1,11 @@
 import React from 'react';
 
-type Marcas = {
+type MarcasType = {
   id: number;
   alt: string;
   src: string;
 };
-const marcas: Marcas[] = [
+const marcas: MarcasType[] = [
   { id: 1, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
   { id: 2, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
   { id: 3, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
@@ -16,9 +16,9 @@ const marcas: Marcas[] = [
 
 const Marcas = () => {
   return (
-    <div className={`bg-setromec-light-1`}>
+    <div className="bg-setromec-light-1">
       <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-5 p-5 mx-auto max-w-7xl">
-        {marcas.map((item: Marcas) => (
+        {marcas.map((item: MarcasType) => (
           <div key={item.id} className="flex justify-center items-center">
             <img src={item.src} alt={item.alt} />
           </div>

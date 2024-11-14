@@ -1,22 +1,24 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import Loading from '../Loading';
+
 export interface TypeButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   secondary?: boolean;
   loading?: boolean;
 }
 
-export default function Button({
+const Button = ({
   children,
   secondary,
   loading = false,
   disabled = false,
   className,
+  type = 'button',
   ...rest
-}: TypeButton) {
+}: TypeButton) => {
   return (
     <button
       {...rest}
-      type={rest.type || 'button'}
+      type={type}
       disabled={disabled || loading}
       className={`${
         secondary
@@ -27,4 +29,6 @@ export default function Button({
       {loading ? <Loading secondary={secondary} /> : children}
     </button>
   );
-}
+};
+
+export default Button;

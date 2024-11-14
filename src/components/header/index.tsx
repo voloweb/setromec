@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import {
   Bars3Icon,
@@ -15,6 +14,11 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   window.addEventListener('resize', () => setMobileMenuOpen(false));
 
+  const toogleMobileMenu = (val: boolean) => {
+    setMobileMenuOpen(val);
+    document.body.style.overflow = val ? 'hidden' : 'auto';
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const route = navigation.find(
@@ -23,11 +27,6 @@ const Header = () => {
     setCurrentMenu(route ? route.name : '');
     toogleMobileMenu(false);
   }, [location]);
-
-  const toogleMobileMenu = (val: boolean) => {
-    setMobileMenuOpen(val);
-    document.body.style.overflow = val ? 'hidden' : 'auto';
-  };
 
   return (
     <nav

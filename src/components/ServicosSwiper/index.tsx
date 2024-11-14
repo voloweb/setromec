@@ -63,39 +63,40 @@ const slides: Slide[] = [
 const ServicosSwiper = () => {
   const [slidesPerView, setSlidesPerView] = useState(0);
   const [idSlideOpen, setIdSlideOpen] = useState<number | null>(null);
-  window.addEventListener('resize', () => getSlidesPerView());
-  useEffect(() => getSlidesPerView(), []);
 
   const getSlidesPerView = () => {
     if (window.innerWidth <= 640) setSlidesPerView(1.2);
-    if (window.innerWidth > 640 && window.innerWidth <= 1024)
+    if (window.innerWidth > 640 && window.innerWidth <= 1024) {
       setSlidesPerView(2.2);
+    }
     if (window.innerWidth > 1024) setSlidesPerView(3.2);
   };
+
+  window.addEventListener('resize', () => getSlidesPerView());
+
+  useEffect(() => getSlidesPerView(), []);
 
   return (
     <div className="p-5 lg:pt-10">
       {!!slidesPerView && (
-        <Swiper
-          slidesPerView={slidesPerView}
-          spaceBetween={30}
-          grabCursor={true}
-        >
+        <Swiper slidesPerView={slidesPerView} spaceBetween={30} grabCursor>
           {slides.map((item: Slide) => (
             <SwiperSlide key={item.id}>
               <div
-                className={`flex flex-col justify-end min-h-[350px] lg:min-h-[450px] rounded bg-no-repeat bg-cover bg-top ${item.classBg}`}
+                className={`flex flex-col justify-end min-h-[350px] lg:min-h-[450px] rounded bg-no-repeat
+                  bg-cover bg-top ${item.classBg}`}
+                role="button"
+                tabIndex={0}
+                aria-hidden="true"
                 onMouseEnter={() => setIdSlideOpen(item.id)}
                 onMouseLeave={() => setIdSlideOpen(null)}
-                onClick={() =>
-                  setIdSlideOpen(item.id === idSlideOpen ? null : item.id)
-                }
+                onClick={() => {
+                  setIdSlideOpen(item.id === idSlideOpen ? null : item.id);
+                }}
               >
                 <div
-                  className={`
-                  bg-setromec-blue-1 rounded transition-all duration-500 delay-100 p-5
-                  ${idSlideOpen && idSlideOpen === item.id ? 'h-[320px] lg:h-[400px]' : 'h-16'}
-                `}
+                  className={`bg-setromec-blue-1 rounded transition-all duration-500 delay-100 p-5
+                    ${idSlideOpen && idSlideOpen === item.id ? 'h-[320px] lg:h-[400px]' : 'h-16'}`}
                 >
                   <span className="block text-white text-center font-bold">
                     {item.title}
