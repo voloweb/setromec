@@ -86,6 +86,7 @@ const ServicosSwiper = () => {
                 className={`flex flex-col justify-end min-h-[350px] lg:min-h-[450px] rounded bg-no-repeat bg-cover bg-top ${item.classBg}`}
                 onMouseEnter={() => setIdSlideOpen(item.id)}
                 onMouseLeave={() => setIdSlideOpen(null)}
+                onClick={() => setIdSlideOpen(item.id === idSlideOpen ? null : item.id)}
               >
                 <div className={`
                   bg-setromec-blue-1 rounded transition-all duration-500 delay-100 p-5
