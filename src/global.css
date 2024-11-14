@@ -14,6 +14,51 @@ main {
   min-height: calc(100vh - 80px);
 }
 
+/* form */
+textarea,
+select,
+input {
+  height: 51px;
+  padding: 10px 16px;
+  background: #fff;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #868E96;
+}
+
+select:invalid { color: #868E96; }
+
+textarea:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: none;
+}
+
+select {
+  padding: 10px;
+  padding-right: 30px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMC41OTM4IDAuMDc4MTI1TDEyIDEuNDg0MzhMNiA3LjQ4NDM4TDAgMS40ODQzOEwxLjQwNjI1IDAuMDc4MTI1TDYgNC42NzE4OEwxMC41OTM4IDAuMDc4MTI1WiIgZmlsbD0iIzg2OEU5NiIvPgo8L3N2Zz4K');
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+
+textarea {
+  resize: none;
+  height: 7em;
+}
+
+label.required::after {
+  content: '*';
+  margin-left: 2px;
+  color: rgba(220, 38, 38, 1);
+}
+
 /* Scroll Bar */
 ::-webkit-scrollbar {
   width: 10px;

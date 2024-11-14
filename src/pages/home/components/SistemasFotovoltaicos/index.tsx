@@ -3,7 +3,7 @@ import ButtonFalarEspecialista from "../../../../components/ButtonFalarEspeciali
 const SistemasFotovoltaicos = () => {
   return (
     <div className="bg-setromec-blue-1">
-      <div className="py-5 lg:py-20 mx-auto max-w-7xl">
+      <div className="py-10 lg:py-20 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="hidden lg:block p-5">
             <img src="/assets/sistemas-fotovoltaicos.png" alt="Sistemas Fotovoltaicos" />

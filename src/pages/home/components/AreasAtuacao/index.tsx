@@ -16,7 +16,7 @@ const areas: Area[] = [
 
 const AreasAtuacao = () => {
   return (
-    <div className="py-5 lg:py-20 mx-auto max-w-7xl">
+    <div className="py-10 lg:py-20 mx-auto max-w-7xl">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="p-5 my-auto">
           <div className="grid grid-cols-3 gap-5 h-80 lg:h-[450px] w-full">

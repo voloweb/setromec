@@ -15,11 +15,12 @@ const Header = () => {
     window.scrollTo(0, 0);
     const route = navigation.find((nav: NavigationType) => nav.href === location.pathname);
     setCurrentMenu(route ? route.name : '');
+    toogleMobileMenu(false);
   }, [location]);
 
-  const toogleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
-    document.body.style.overflow = mobileMenuOpen ? 'auto' : 'hidden';
+  const toogleMobileMenu = (val: boolean) => {
+    setMobileMenuOpen(val);
+    document.body.style.overflow = val ? 'hidden' : 'auto';
   }
 
   return (
@@ -51,7 +52,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center md:hidden">
-          <button className="group inline-flex items-center justify-center" onClick={toogleMobileMenu}>
+          <button className="group inline-flex items-center justify-center" onClick={() => toogleMobileMenu(!mobileMenuOpen)}>
             <span className="sr-only">Open main menu</span>
             { mobileMenuOpen ? (
               <XMarkIcon aria-hidden="true" className="size-8" />

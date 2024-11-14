@@ -3,6 +3,7 @@ import Marcas from '../../components/Marcas';
 import AtuacoesServicos from './components/AtuacoesServicos';
 import SistemasFotovoltaicos from './components/SistemasFotovoltaicos';
 import AreasAtuacao from './components/AreasAtuacao';
+import Contato from './components/Contato';
 
 const Page = () => {
   return (
@@ -12,17 +13,7 @@ const Page = () => {
       <AtuacoesServicos />
       <SistemasFotovoltaicos />
       <AreasAtuacao />
-
-      <div className="px-5 pb-5 lg:pb-20 mx-auto max-w-7xl">
-        <div className="text-center font-semibold">
-          <h2 className="text-3xl lg:text-4xl text-setromec-gray-4 mx-auto max-w-screen-sm">
-            Entre em contato e descubra como podemos <span className="text-setromec-blue-1">ajudar você!</span>
-          </h2>
-          <p className="text-sm text-setromec-gray-3 mx-auto max-w-md py-5">
-            Entre em contato e agende uma visita para que possamos analisar e identificar a melhor solução para seu negócio.
-          </p>
-        </div>
-      </div>
+      <Contato />
     </div>
   )
 }
