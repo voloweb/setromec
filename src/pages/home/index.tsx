@@ -1,3 +1,4 @@
+import React from 'react';
 import Banner from './components/Banner';
 import Marcas from '../../components/Marcas';
 import AtuacoesServicos from './components/AtuacoesServicos';
@@ -15,7 +16,7 @@ const Page = () => {
       <AreasAtuacao />
       <Contato />
     </div>
-  )
-}
+  );
+};
 
 export default Page;

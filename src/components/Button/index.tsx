@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes } from 'react'
-import Loading from '../Loading'
+import React, { ButtonHTMLAttributes } from 'react';
+import Loading from '../Loading';
 export interface TypeButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  secondary?: boolean
-  loading?: boolean
+  secondary?: boolean;
+  loading?: boolean;
 }
 
 export default function Button({
@@ -24,7 +24,7 @@ export default function Button({
           : 'bg-setromec-blue-1 text-white'
       } hover:opacity-95 font-normal h-14 p-5 rounded-lg leading-5 ${className}`}
     >
-      {loading ? <Loading secondary={secondary} /> : children }
+      {loading ? <Loading secondary={secondary} /> : children}
     </button>
-  )
+  );
 }

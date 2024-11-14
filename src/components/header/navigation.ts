@@ -1,6 +1,6 @@
 export interface NavigationType {
-  name: string
-  href: string
+  name: string;
+  href: string;
 }
 
 export const navigation: NavigationType[] = [
@@ -8,4 +8,4 @@ export const navigation: NavigationType[] = [
   { name: 'Áreas de atuação', href: '/areas-atuacao' },
   { name: 'Clientes', href: '/clietes' },
   { name: 'Contato', href: '/contato' },
-]
+];

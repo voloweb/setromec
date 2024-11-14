@@ -1,8 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ArrowRightIcon,
+} from '@heroicons/react/24/outline';
 import { NavigationType, navigation } from './navigation';
 
 const Header = () => {
@@ -13,7 +17,9 @@ const Header = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const route = navigation.find((nav: NavigationType) => nav.href === location.pathname);
+    const route = navigation.find(
+      (nav: NavigationType) => nav.href === location.pathname
+    );
     setCurrentMenu(route ? route.name : '');
     toogleMobileMenu(false);
   }, [location]);
@@ -21,19 +27,28 @@ const Header = () => {
   const toogleMobileMenu = (val: boolean) => {
     setMobileMenuOpen(val);
     document.body.style.overflow = val ? 'hidden' : 'auto';
-  }
+  };
 
   return (
-    <nav className="bg-white shadow-md h-20 z-50">
+    <nav
+      className={`fixed w-full bg-white h-20 z-50 ${mobileMenuOpen ? 'shadow-none' : 'shadow-md'}`}
+    >
       <div className="flex items-center justify-between h-full px-5 md:p-0">
         <div className="flex flex-1 items-center justify-center lg:justify-between">
           <div className="flex flex-1 items-center p-0 gap-0 md:p-5 md:gap-5 mx-auto max-w-7xl">
             <Link to="/" className="flex items-center">
-              <img alt="Logo Setromec" src="assets/logo.png" className="h-8 md:h-10 w-auto" />
+              <img
+                alt="Logo Setromec"
+                src="assets/logo.png"
+                className="h-8 md:h-10 w-auto"
+              />
             </Link>
             <div className="hidden md:flex flex-1 md:justify-end lg:justify-start xl:justify-center gap-8">
               {navigation.map((item: NavigationType) => (
-                <Link key={item.name} to={item.href} aria-current={currentMenu === item.name ? 'page' : undefined}
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  aria-current={currentMenu === item.name ? 'page' : undefined}
                   className={`
                     font-medium font-dm-sans px-1 pt-1 border-b-2 hover:text-setromec-blue-2 hover:border-b-2
                     ${currentMenu === item.name ? 'text-setromec-blue-2 border-setromec-blue-2' : 'border-transparent'}
@@ -45,18 +60,24 @@ const Header = () => {
             </div>
           </div>
 
-          <Link to="/contato" className="hidden absolute lg:flex right-0 items-center justify-center gap-2 w-80 h-20 bg-setromec-blue-1">
+          <Link
+            to="/contato"
+            className="hidden absolute lg:flex right-0 items-center justify-center gap-2 w-80 h-20 bg-setromec-blue-1"
+          >
             <span className="text-white">Falar com especialista</span>
             <ArrowRightIcon aria-hidden="true" className="text-white size-4" />
           </Link>
         </div>
 
         <div className="flex items-center md:hidden">
-          <button className="group inline-flex items-center justify-center" onClick={() => toogleMobileMenu(!mobileMenuOpen)}>
+          <button
+            className="group inline-flex items-center justify-center"
+            onClick={() => toogleMobileMenu(!mobileMenuOpen)}
+          >
             <span className="sr-only">Open main menu</span>
-            { mobileMenuOpen ? (
+            {mobileMenuOpen ? (
               <XMarkIcon aria-hidden="true" className="size-8" />
-            ): (
+            ) : (
               <Bars3Icon aria-hidden="true" className="size-8" />
             )}
           </button>
@@ -88,9 +109,8 @@ const Header = () => {
           </Link>
         ))}
       </Transition>
-
     </nav>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

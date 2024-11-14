@@ -1,9 +1,10 @@
+import React from 'react';
 
 type Marcas = {
   id: number;
   alt: string;
   src: string;
-}
+};
 const marcas: Marcas[] = [
   { id: 1, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
   { id: 2, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
@@ -11,7 +12,7 @@ const marcas: Marcas[] = [
   { id: 4, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
   { id: 5, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
   { id: 6, alt: 'Logo Bradesco', src: 'assets/marcas/bradesco.png' },
-]
+];
 
 const Marcas = () => {
   return (
@@ -24,7 +25,7 @@ const Marcas = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Marcas;

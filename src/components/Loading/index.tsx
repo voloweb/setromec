@@ -1,6 +1,8 @@
-type Loading ={
+import React from 'react';
+
+type Loading = {
   secondary?: boolean;
-}
+};
 
 export default function Loading({ secondary = false }: Loading) {
   return (
@@ -15,5 +17,5 @@ export default function Loading({ secondary = false }: Loading) {
         Loading...
       </span>
     </div>
-  )
+  );
 }

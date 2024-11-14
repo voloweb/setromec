@@ -1,4 +1,5 @@
-import ButtonFalarEspecialista from "../../../../components/ButtonFalarEspecialista";
+import React from 'react';
+import ButtonFalarEspecialista from '../../../../components/ButtonFalarEspecialista';
 
 const SistemasFotovoltaicos = () => {
   return (
@@ -6,10 +7,15 @@ const SistemasFotovoltaicos = () => {
       <div className="py-10 lg:py-20 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="hidden lg:block p-5">
-            <img src="/assets/sistemas-fotovoltaicos.png" alt="Sistemas Fotovoltaicos" />
+            <img
+              src="/assets/sistemas-fotovoltaicos.png"
+              alt="Sistemas Fotovoltaicos"
+            />
           </div>
           <div className="flex flex-col justify-center text-white p-5">
-            <h2 className="font-bold text-3xl lg:text-4xl pb-5">Sistemas Fotovoltaicos</h2>
+            <h2 className="font-bold text-3xl lg:text-4xl pb-5">
+              Sistemas Fotovoltaicos
+            </h2>
             <p>
               Nossa divisão de energia solar fotovoltaica é preparada para
               projetar e instalar sistemas de geração de energia produzida por
@@ -25,7 +31,7 @@ const SistemasFotovoltaicos = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SistemasFotovoltaicos;
