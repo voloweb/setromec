@@ -71,7 +71,7 @@ const Header = () => {
         leave="transform transition ease-in-out duration-500 sm:duration-700"
         leaveFrom="translate-x-0"
         leaveTo="translate-x-full"
-        className="shadow-md fixed w-screen h-[calc(100%-80px)] bg-white p-3"
+        className="fixed bottom-0 w-screen h-[calc(100%-80px)] bg-white p-3 z-50"
       >
         {navigation.map((item: NavigationType) => (
           <Link
