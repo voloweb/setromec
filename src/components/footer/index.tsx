@@ -1,8 +1,8 @@
 import React from 'react';
 import { ArrowUpIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
-import { navigation, NavigationType } from '../Header/navigation';
-import ButtonFalarEspecialista from '../ButtonFalarEspecialista';
+import { navigation, NavigationType } from '../header/navigation';
+import ButtonFalarEspecialista from '../buttonFalarEspecialista';
 
 const scrollToTop = () => {
   const doc = document;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ServicosSwiper from '../../../../components/ServicosSwiper';
+import ServicosSwiper from '../../../../components/servicosSwiper';
 
 const AtuacoesServicos = () => {
   return (

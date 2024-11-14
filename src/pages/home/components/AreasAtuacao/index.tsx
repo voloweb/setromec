@@ -4,7 +4,7 @@ import {
   BuildingStorefrontIcon,
   BuildingOfficeIcon,
 } from '@heroicons/react/24/outline';
-import ButtonFalarEspecialista from '../../../../components/ButtonFalarEspecialista';
+import ButtonFalarEspecialista from '../../../../components/buttonFalarEspecialista';
 
 type Area = {
   id: number;

@@ -3,7 +3,7 @@ import {
   PhoneArrowUpRightIcon,
   EnvelopeIcon,
 } from '@heroicons/react/24/outline';
-import FormContato from '../../components/FormContato';
+import FormContato from '../../components/formContato';
 
 type Contato = {
   id: number;

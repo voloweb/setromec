@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react';
-import Loading from '../Loading';
+import Loading from '../loading';
 
 export interface TypeButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   secondary?: boolean;

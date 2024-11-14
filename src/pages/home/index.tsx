@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './components/Banner';
-import Marcas from '../../components/Marcas';
+import Marcas from '../../components/marcas';
 import AtuacoesServicos from './components/AtuacoesServicos';
 import SistemasFotovoltaicos from './components/SistemasFotovoltaicos';
 import AreasAtuacao from './components/AreasAtuacao';

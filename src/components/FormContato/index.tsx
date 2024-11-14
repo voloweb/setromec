@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import Button from '../Button';
+import Button from '../button';
 
 type Inputs = {
   setor: string;

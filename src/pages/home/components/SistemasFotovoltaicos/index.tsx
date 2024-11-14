@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonFalarEspecialista from '../../../../components/ButtonFalarEspecialista';
+import ButtonFalarEspecialista from '../../../../components/buttonFalarEspecialista';
 
 const SistemasFotovoltaicos = () => {
   return (
