@@ -15,7 +15,7 @@ const Contato = () => {
         </p>
       </div>
 
-      <div className="mx-auto max-w-screen-sm pt-10">
+      <div className="mx-auto max-w-screen-sm">
         <FormContato />
       </div>
     </div>

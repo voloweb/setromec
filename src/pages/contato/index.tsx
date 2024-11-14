@@ -39,18 +39,18 @@ const cotatos: Contato[] = [
 
 const Page = () => {
   return (
-    <div className="py-10 lg:py-20 mx-auto max-w-7xl">
+    <div className="px-5 py-10 lg:py-20 mx-auto max-w-7xl">
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="font-semibold px-5 pt-5">
-          <h2 className="text-3xl lg:text-4xl text-setromec-gray-4 mx-auto max-w-screen-sm">
+        <div className="font-semibold lg:p-5">
+          <h2 className="text-3xl lg:text-4xl text-setromec-gray-4 mx-auto max-w-screen-sm py-5 lg:pt-0">
             <span>Entre em contato e descubra como podemos </span>
             <span className="text-setromec-blue-1">ajudar você!</span>
           </h2>
-          <p className="text-sm text-setromec-gray-3 max-w-md py-5">
+          <p className="text-sm text-setromec-gray-3 max-w-md pb-5">
             Entre em contato e agende uma visita para que possamos analisar e
             identificar a melhor solução para seu negócio.
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 pb-5">
             {cotatos.map((item: Contato) => (
               <a
                 key={item.id}
@@ -65,7 +65,7 @@ const Page = () => {
             ))}
           </div>
         </div>
-        <div className="p-5">
+        <div className="pb-5 lg:p-5">
           <FormContato />
         </div>
       </div>

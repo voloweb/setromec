@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
+type ServicosSwiperType = {
+  className?: string;
+};
+
 type Slide = {
   id: number;
   classBg: string;
@@ -60,7 +64,7 @@ const slides: Slide[] = [
   },
 ];
 
-const ServicosSwiper = () => {
+const ServicosSwiper = ({ className = '' }: ServicosSwiperType) => {
   const [slidesPerView, setSlidesPerView] = useState(0);
   const [idSlideOpen, setIdSlideOpen] = useState<number | null>(null);
 
@@ -77,7 +81,7 @@ const ServicosSwiper = () => {
   useEffect(() => getSlidesPerView(), []);
 
   return (
-    <div className="p-5 lg:pt-10">
+    <div className={className}>
       {!!slidesPerView && (
         <Swiper slidesPerView={slidesPerView} spaceBetween={30} grabCursor>
           {slides.map((item: Slide) => (
