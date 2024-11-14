@@ -8,21 +8,19 @@ const SistemasFotovoltaicos = () => {
           <div className="hidden lg:block p-5">
             <img src="/assets/sistemas-fotovoltaicos.png" alt="Sistemas Fotovoltaicos" />
           </div>
-          <div className="flex flex-col justify-center text-white px-5">
-            <h2 className="font-bold text-3xl lg:text-4xl pt-5">Sistemas Fotovoltaicos</h2>
-            <div className="py-5">
-              <p>
-                Nossa divisão de energia solar fotovoltaica é preparada para
-                projetar e instalar sistemas de geração de energia produzida por
-                meio da radiação solar.
-              </p>
-              <p>
-                Seja qual for o tamanho da sua necessidade, estamos prontos para
-                atender você!
-              </p>
+          <div className="flex flex-col justify-center text-white p-5">
+            <h2 className="font-bold text-3xl lg:text-4xl pb-5">Sistemas Fotovoltaicos</h2>
+            <p>
+              Nossa divisão de energia solar fotovoltaica é preparada para
+              projetar e instalar sistemas de geração de energia produzida por
+              meio da radiação solar.
+            </p>
+            <p>
+              Seja qual for o tamanho da sua necessidade, estamos prontos para
+              atender você!
+            </p>
 
-              <ButtonFalarEspecialista secondary className="mt-5" />
-            </div>
+            <ButtonFalarEspecialista secondary className="mt-5" />
           </div>
         </div>
       </div>

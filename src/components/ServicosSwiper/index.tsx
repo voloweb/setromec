@@ -83,13 +83,13 @@ const ServicosSwiper = () => {
           {slides.map((item: Slide) => (
             <SwiperSlide key={item.id}>
               <div
-                className={`flex flex-col justify-end min-h-[450px] rounded bg-no-repeat bg-cover bg-top ${item.classBg}`}
+                className={`flex flex-col justify-end min-h-[350px] lg:min-h-[450px] rounded bg-no-repeat bg-cover bg-top ${item.classBg}`}
                 onMouseEnter={() => setIdSlideOpen(item.id)}
                 onMouseLeave={() => setIdSlideOpen(null)}
               >
                 <div className={`
                   bg-setromec-blue-1 rounded transition-all duration-500 delay-100 p-5
-                  ${idSlideOpen && idSlideOpen === item.id ? 'h-[400px]' : 'h-16'}
+                  ${idSlideOpen && idSlideOpen === item.id ? 'h-[320px] lg:h-[400px]' : 'h-16'}
                 `}>
                   <span className="block text-white text-center font-bold">
                     {item.title}

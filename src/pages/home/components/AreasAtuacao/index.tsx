@@ -17,7 +17,7 @@ const areas: Area[] = [
 const AreasAtuacao = () => {
   return (
     <div className="py-5 lg:py-20 mx-auto max-w-7xl">
-      <div className="grid grid-cols-1 lg:grid-cols-2 py-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="p-5">
           <div className="grid grid-cols-3 gap-5">
             <img className="col-span-2 row-span-2 h-full rounded" src="assets/home-areas-atuacao/1.png" alt="" />
@@ -27,7 +27,7 @@ const AreasAtuacao = () => {
         </div>
 
         <div className="flex flex-col justify-center p-5">
-          <h2 className="font-bold text-3xl lg:text-4xl pt-5">Quais nossas áreas de atuação?</h2>
+          <h2 className="font-bold text-3xl lg:text-4xl">Quais nossas áreas de atuação?</h2>
           <p className="py-5">
             Trabalhamos com processos confiáveis, que garantem consistência e
             excelência nos resultados, independentemente do tamanho ou
@@ -35,7 +35,7 @@ const AreasAtuacao = () => {
             transparência e respeito com nossos parceiros e clientes
           </p>
 
-          <div className="flex flex-col gap-2 py-2">
+          <div className="flex flex-col gap-2">
             {areas.map((item: Area) => (
               <div key={item.id} className="flex items-center gap-4">
                 <div className="flex items-center justify-center bg-setromec-blue-1-opacity-25 rounded-full h-10 w-10">
@@ -46,7 +46,7 @@ const AreasAtuacao = () => {
             ))}
           </div>
 
-          <ButtonFalarEspecialista className="my-5" />
+          <ButtonFalarEspecialista className="mt-5" />
         </div>
       </div>
     </div>
