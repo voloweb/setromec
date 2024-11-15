@@ -96,8 +96,8 @@ const Page = () => {
 
             <div className="p-2 lg:p-5">
               <img
-                src="assets/clientes/estacao-bh.png"
-                alt="Estação BH"
+                src="assets/clientes/sebrae.png"
+                alt="Sebrae"
                 className="h-auto z-10 teste"
               />
             </div>

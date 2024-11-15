@@ -8,7 +8,7 @@ const SistemasFotovoltaicos = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="hidden lg:block p-5">
             <img
-              src="/assets/sistemas-fotovoltaicos.png"
+              src="/assets/home/sistemas-fotovoltaicos.png"
               alt="Sistemas Fotovoltaicos"
             />
           </div>

@@ -14,6 +14,9 @@ module.exports = {
         'home-areas-atuacao-1': "url('/public/assets/home/home-areas-atuacao/1.png')",
         'home-areas-atuacao-2': "url('/public/assets/home/home-areas-atuacao/2.png')",
         'home-areas-atuacao-3': "url('/public/assets/home/home-areas-atuacao/3.png')",
+        // sibre
+        'sobre-resultados-1': "url('/public/assets/sobre/resultados-1.png')",
+        'sobre-resultados-2': "url('/public/assets/sobre/resultados-2.png')",
         //servicos-swiper
         'sw-projeto-laudos': "url('/public/assets/servicos-swiper/projeto_e_laudos.png')",
         'sw-instalacaoes-obras': "url('/public/assets/servicos-swiper/instalacaoes_e_obras.png')",
