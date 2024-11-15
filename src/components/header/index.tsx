@@ -86,13 +86,18 @@ const Header = () => {
       <Transition
         show={mobileMenuOpen}
         as="div"
+        className="fixed w-full h-full bg-black opacity-40"
+      />
+      <Transition
+        show={mobileMenuOpen}
+        as="div"
         enter="transform transition ease-in-out duration-500 sm:duration-700"
         enterFrom="translate-x-full"
         enterTo="translate-x-0"
         leave="transform transition ease-in-out duration-500 sm:duration-700"
         leaveFrom="translate-x-0"
         leaveTo="translate-x-full"
-        className="fixed top-20 w-screen h-[calc(100%-80px)] bg-white p-3 z-50"
+        className="fixed top-20 right-0 w-64 h-[calc(100%-80px)] bg-white border-t p-3 z-50"
       >
         {navigation.map((item: NavigationType) => (
           <Link
