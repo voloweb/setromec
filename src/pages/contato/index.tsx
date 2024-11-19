@@ -25,7 +25,7 @@ const cotatos: Contato[] = [
     link: 'tel:031 3567 0001',
   },
   {
-    id: 1,
+    id: 2,
     icone: (
       <EnvelopeIcon
         aria-hidden="true"

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import emailjs from '@emailjs/browser';
 import Button from '../button';
 
 type Inputs = {
@@ -11,7 +13,6 @@ type Inputs = {
 };
 
 const FormContato = () => {
-  const [disabled, setDisabled] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   const {
@@ -19,24 +20,39 @@ const FormContato = () => {
     reset,
     handleSubmit,
     watch,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setLoading(true);
-    setDisabled(true);
-    try {
-      // eslint-disable-next-line
-      console.log('E-mail de contato enviado com sucesso!', data);
-      reset();
-    } catch (error) {
-      // eslint-disable-next-line
-      console.log('Ops, algo de errado aconteceu!', error);
-    } finally {
-      setTimeout(() => {
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID || '',
+        process.env.REACT_APP_TEMPLATE_ID || '',
+        data,
+        {
+          publicKey: process.env.REACT_APP_PUBLIC_KEY,
+        }
+      )
+      .then(() => {
+        toast.success('E-mail enviado com sucesso!', {
+          position: 'bottom-center',
+          hideProgressBar: true,
+          draggable: true,
+          theme: 'colored',
+        });
+        reset();
+      })
+      .catch(() => {
+        toast.error('Ops, algo de errado aconteceu!', {
+          position: 'bottom-center',
+          hideProgressBar: true,
+          draggable: true,
+          theme: 'colored',
+        });
+      })
+      .finally(() => {
         setLoading(false);
-        setDisabled(false);
-      }, 5000);
-    }
+      });
   };
 
   return (
@@ -130,7 +146,7 @@ const FormContato = () => {
 
       <Button
         type="submit"
-        disabled={disabled && isValid}
+        disabled={loading}
         loading={loading}
         className="w-full"
         aria-label="Enviar"

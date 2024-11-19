@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 // componets
 import Header from './components/header';
@@ -27,6 +28,7 @@ const AppRoutes = () => {
         </Routes>
       </main>
       <Footer />
+      <ToastContainer />
     </BrowserRouter>
   );
 };
