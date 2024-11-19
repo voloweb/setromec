@@ -83,7 +83,12 @@ const ServicosSwiper = ({ className = '' }: ServicosSwiperType) => {
   return (
     <div className={className}>
       {!!slidesPerView && (
-        <Swiper slidesPerView={slidesPerView} spaceBetween={30} grabCursor>
+        <Swiper
+          slidesPerView={slidesPerView}
+          spaceBetween={30}
+          grabCursor
+          style={{ zIndex: 0 }}
+        >
           {slides.map((item: Slide) => (
             <SwiperSlide key={item.id}>
               <div
