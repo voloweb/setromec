@@ -18,7 +18,6 @@ const FormContato = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const onChange = (value: string | null) => {
-    console.log(value);
     if (value) setDisabled(false);
   };
 
@@ -90,7 +89,7 @@ const FormContato = () => {
         </select>
       </div>
 
-      <div className="grid gap-4 mb-4 md:grid-cols-1">
+      {/* <div className="grid gap-4 mb-4 md:grid-cols-1">
         <div className="input">
           <label htmlFor="nome" className="block required mb-1">
             Nome
@@ -148,7 +147,7 @@ const FormContato = () => {
           className={`border rounded-lg w-full ${errors.mensagem ? 'border-red-600' : 'border-gray-300'}`}
           placeholder="Digite aqui..."
         ></textarea>
-      </div>
+      </div> */}
 
       <div className="flex justify-center mb-3">
         <ReCAPTCHA

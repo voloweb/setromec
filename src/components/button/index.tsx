@@ -20,11 +20,11 @@ const Button = ({
       {...rest}
       type={type}
       disabled={disabled || loading}
-      className={`${
-        secondary
-          ? 'bg-white text-setromec-blue-1'
-          : 'bg-setromec-blue-1 text-white'
-      } hover:opacity-95 font-normal h-14 p-5 rounded-lg leading-none ${className}`}
+      className={`
+        font-normal h-14 p-5 rounded-lg leading-none
+        ${secondary ? 'bg-white text-setromec-blue-1' : 'bg-setromec-blue-1 text-white'}
+        ${disabled || loading ? 'cursor-not-allowed opacity-80' : 'hover:opacity-95'}
+        ${className}`}
     >
       {loading ? <Loading secondary={secondary} /> : children}
     </button>
