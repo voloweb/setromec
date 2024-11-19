@@ -24,7 +24,7 @@ const Button = ({
         secondary
           ? 'bg-white text-setromec-blue-1'
           : 'bg-setromec-blue-1 text-white'
-      } hover:opacity-95 font-normal h-14 p-5 rounded-lg leading-5 ${className}`}
+      } hover:opacity-95 font-normal h-14 p-5 rounded-lg leading-none ${className}`}
     >
       {loading ? <Loading secondary={secondary} /> : children}
     </button>
