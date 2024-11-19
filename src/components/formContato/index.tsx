@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react';
-import { useForm, SubmitHandler, UseFormReset } from 'react-hook-form';
+import React, { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Button from '../button';
 
 type Inputs = {
@@ -14,67 +14,51 @@ type Inputs = {
 };
 
 const FormContato = () => {
+  const [disabled, setDisabled] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
-  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleReCaptchaVerify = useCallback(
-    async (data: Inputs, reset: UseFormReset<Inputs>) => {
-      if (!executeRecaptcha) {
-        toast.error('Execute recaptcha not yet available', {
-          position: 'bottom-center',
-          hideProgressBar: true,
-          draggable: true,
-          theme: 'colored',
-        });
-        return;
-      }
-
-      const token = await executeRecaptcha();
-      if (token) {
-        setLoading(true);
-        emailjs
-          .send(
-            process.env.REACT_APP_SERVICE_ID || '',
-            process.env.REACT_APP_TEMPLATE_ID || '',
-            data,
-            {
-              publicKey: process.env.REACT_APP_PUBLIC_KEY,
-            }
-          )
-          .then(() => {
-            toast.success('E-mail enviado com sucesso!', {
-              position: 'bottom-center',
-              hideProgressBar: true,
-              draggable: true,
-              theme: 'colored',
-            });
-            reset();
-          })
-          .catch(() => {
-            toast.error('Ops, algo de errado aconteceu!', {
-              position: 'bottom-center',
-              hideProgressBar: true,
-              draggable: true,
-              theme: 'colored',
-            });
-          })
-          .finally(() => {
-            setLoading(false);
-          });
-      }
-    },
-    [executeRecaptcha]
-  );
+  const onChange = (value: string | null) => {
+    console.log(value);
+    if (value) setDisabled(false);
+  };
 
   const {
     register,
     reset,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    handleReCaptchaVerify(data, reset);
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID || '',
+        process.env.REACT_APP_TEMPLATE_ID || '',
+        data,
+        {
+          publicKey: process.env.REACT_APP_PUBLIC_KEY,
+        }
+      )
+      .then(() => {
+        toast.success('E-mail enviado com sucesso!', {
+          position: 'bottom-center',
+          hideProgressBar: true,
+          draggable: true,
+          theme: 'colored',
+        });
+        reset();
+      })
+      .catch(() => {
+        toast.error('Ops, algo de errado aconteceu!', {
+          position: 'bottom-center',
+          hideProgressBar: true,
+          draggable: true,
+          theme: 'colored',
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -166,9 +150,16 @@ const FormContato = () => {
         ></textarea>
       </div>
 
+      <div className="flex justify-center mb-3">
+        <ReCAPTCHA
+          sitekey={process.env.REACT_APP_RECAPTCHA_KEY || ''}
+          onChange={onChange}
+        />
+      </div>
+
       <Button
         type="submit"
-        disabled={loading}
+        disabled={disabled && isValid}
         loading={loading}
         className="w-full"
         aria-label="Enviar"
