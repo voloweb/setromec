@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import React, { useCallback, useState } from 'react';
+import { useForm, SubmitHandler, UseFormReset } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Button from '../button';
 
 type Inputs = {
@@ -14,6 +15,56 @@ type Inputs = {
 
 const FormContato = () => {
   const [loading, setLoading] = useState<boolean>(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleReCaptchaVerify = useCallback(
+    async (data: Inputs, reset: UseFormReset<Inputs>) => {
+      if (!executeRecaptcha) {
+        toast.error('Execute recaptcha not yet available', {
+          position: 'bottom-center',
+          hideProgressBar: true,
+          draggable: true,
+          theme: 'colored',
+        });
+        return;
+      }
+
+      const token = await executeRecaptcha();
+      if (token) {
+        setLoading(true);
+        emailjs
+          .send(
+            process.env.REACT_APP_SERVICE_ID || '',
+            process.env.REACT_APP_TEMPLATE_ID || '',
+            data,
+            {
+              publicKey: process.env.REACT_APP_PUBLIC_KEY,
+            }
+          )
+          .then(() => {
+            toast.success('E-mail enviado com sucesso!', {
+              position: 'bottom-center',
+              hideProgressBar: true,
+              draggable: true,
+              theme: 'colored',
+            });
+            reset();
+          })
+          .catch(() => {
+            toast.error('Ops, algo de errado aconteceu!', {
+              position: 'bottom-center',
+              hideProgressBar: true,
+              draggable: true,
+              theme: 'colored',
+            });
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }
+    },
+    [executeRecaptcha]
+  );
 
   const {
     register,
@@ -23,36 +74,7 @@ const FormContato = () => {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    setLoading(true);
-    emailjs
-      .send(
-        process.env.REACT_APP_SERVICE_ID || '',
-        process.env.REACT_APP_TEMPLATE_ID || '',
-        data,
-        {
-          publicKey: process.env.REACT_APP_PUBLIC_KEY,
-        }
-      )
-      .then(() => {
-        toast.success('E-mail enviado com sucesso!', {
-          position: 'bottom-center',
-          hideProgressBar: true,
-          draggable: true,
-          theme: 'colored',
-        });
-        reset();
-      })
-      .catch(() => {
-        toast.error('Ops, algo de errado aconteceu!', {
-          position: 'bottom-center',
-          hideProgressBar: true,
-          draggable: true,
-          theme: 'colored',
-        });
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    handleReCaptchaVerify(data, reset);
   };
 
   return (
