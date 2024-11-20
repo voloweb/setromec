@@ -63,6 +63,7 @@ const Footer = () => {
             <button
               onClick={scrollToTop}
               type="button"
+              name="scrollToTop"
               className="flex justify-center items-center rounded-full bg-setromec-blue-1 shadow-md size-9 md:size-12"
             >
               <ArrowUpIcon aria-hidden="true" className="size-5 text-white" />

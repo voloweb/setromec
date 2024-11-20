@@ -96,9 +96,9 @@ const ServicosSwiper = ({ className = '' }: ServicosSwiperType) => {
                   bg-cover bg-top ${item.classBg}`}
                 role="button"
                 tabIndex={0}
-                aria-hidden="true"
                 onMouseEnter={() => setIdSlideOpen(item.id)}
                 onMouseLeave={() => setIdSlideOpen(null)}
+                onKeyDown={() => null}
                 onClick={() => {
                   setIdSlideOpen(item.id === idSlideOpen ? null : item.id);
                 }}
